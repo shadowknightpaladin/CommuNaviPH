@@ -1,0 +1,606 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Commuting Etiquette | CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #046297;
+		}
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+
+
+		#navcontainer{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkguides{
+			color: #FAAA58;
+		}
+		.clear{
+			clear: all;
+		}
+
+
+
+
+
+		#introcontainer{
+			width: 57%;
+			margin: 0 auto;
+			padding: 50px 0px;
+			position: relative;
+		}
+		#introicon{
+			width: 25%;
+			height: auto;
+			display: inline-block;
+		}
+		#introcontent{
+			width: 69%;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-left: 35px;
+			display: inline-block;
+			position: absolute;
+			top: 45%;
+			transform: translateY(-50%);
+		}
+		.clear{
+			clear: all;
+		}
+		#introtitle{
+			font-size: 30px;
+			font-weight: bold;
+			margin: 10px 0px;
+			padding: 0 auto;
+		}
+		#introbody{
+			font-family: helvetica;
+			font-weight: lighter;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+
+
+
+		#panel0{
+			background-color: #046297;
+			color: white;
+			font-size: 25px;
+			text-align: center;
+			padding: 10px 0px;
+		}
+
+		#panel0 p{
+			margin: 0px;
+			padding: 0px;
+			font-weight: bold;
+		}
+
+
+
+
+		.panel{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.panelcolor{
+			background-color: #5BA8CE;
+		}
+		.paneltip{
+			background-color: #5BA8CE;
+			color: white;
+		}
+		.paneltipvar{
+			background-color: #5BA8CE;
+		}
+		.panelwhite{
+			background-color: white;
+		}
+		.panelcontainer{
+			width: 67%;
+			margin: 0 auto;
+			padding: 30px 0px;
+			padding-bottom: 50px;
+			position: relative;
+		}
+		.panelcounter{
+			font-size: 25px;
+			margin: 10px 0px 15px 0px;
+			padding: 0 auto;
+			font-weight: bold;
+		}
+		.panelimg{
+			width: 300px;
+			display: inline-block;
+		}
+		.panelheader{
+			font-size: 27px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+		.panelcontent{
+			font-family: helvetica;
+			font-weight: lighter;
+			width: 500px;
+			margin: 0 auto;
+			padding-left: 0 auto;
+			padding-left: 45px;
+			display: inline-block;
+			position: absolute;
+			top: 55%;
+			transform: translateY(-50%);
+		}
+		.panelbody{
+			width: 450px;
+		}
+		#colorinline{
+			color: #854098;
+			font-weight: bolder;
+		}
+		#example{
+			font-style: italic;
+		}
+
+
+
+
+
+		.countercontain{
+			margin-bottom: 10px;
+			position: relative;
+		}
+		#tipimg{
+			width: 50px;
+			display: inline-block;
+		}
+		.countertip{
+			padding-left: 5px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+
+		#backlink{
+			text-decoration: none;
+		}
+		#backlink:visited{
+			color: black;
+		}
+		#backcont{
+			margin: 50px 0px;
+			padding-left: 115px;
+			position: relative;
+		}
+		#backbutton{
+			width: 70px;
+			height: 70px;
+			display: inline-block;
+		}
+		#backcont p{
+			font-size: 20px;
+			padding-left: 10px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#soundbutton{
+			position: relative;
+		}
+		#soundimg{
+			width: 50px;
+			display: inline-block;
+		}
+		#soundbutton p{
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width:499px;){
+			/*body{
+				font-size: 15px;
+			}*/
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+		}
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width:700px){
+			#nav span{
+				padding: 0px 24px;
+			}
+			#introicon{
+				width: 40%;
+			}
+			#introcontainer{
+				margin: 0% 0%;
+			}
+			#introcontent{
+				width: 80%;
+			}
+			#introtitle{
+				width: 100%;
+			}
+			#introbody{
+				width: 140%;
+				margin: 0%;
+			}
+			.panel{
+				width: 100%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcounter{
+				font-size: 20px;
+			}
+			.panelimg{
+				width: 235px;
+			}
+			.panelbody{
+				width: 95%;
+			}
+			#tipimg{
+				width: 10%;
+				height:auto;
+			}
+			#backcont{
+				padding-left: 30px;
+			}
+		}
+
+
+		/*FULLSCREEN RECENTERING*/
+		@media screen and (min-width: 701px){
+			.panelcontainer{
+				margin: 0 auto;
+			}
+		}
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="intro">
+			<div id="introcontainer">
+				<img id="introicon" src="Images/illusts new_Etiq.png">
+
+				<div id="introcontent">
+					<p id="introtitle">Commuting Etiquette</p>
+
+					<p id="introbody">
+						Here are some tips and tricks so as not to irritate your fellow passengers, keeping your commute experience peaceful and nice.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="panel0">
+			<p>NICE AND PEACEFUL IS THE GOAL</p>
+		</div>
+
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 1</p>
+
+				<img class="panelimg" src="Images/illusts new_Comet T1.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">R E S P E C T</p>
+					<p class="panelbody">
+						Give up your seat for the elderly or the pregnant. They would have the most difficulty dealing with a crowd of people.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 2</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 1.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Volume, please.</p>
+					<p class="panelbody">
+						It’s okay to chat and talk with your friends, just don’t talk too loudly. Some people want peace (and sleep) during their commute.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 3</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 2.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Extra space</p>
+					<p class="panelbody">
+						Don’t put your bags on the seat beside you unless: you paid for it or there is ample space. Don’t deprive other people of seating because of your bag. It usually means that the seat is taken.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 4</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 3.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Squish a bit</p>
+					<p class="panelbody">
+						In Jeeps, MRT/LRT and FXs: When that last unfortunate person who only has half of their bottoms on the seat rides, try to give them as much space as possible. They paid for a seat too.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 5</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 4.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Close your legs</p>
+					<p class="panelbody">
+						Specially you, men. Don’t spread your legs so wide, it’s uncomfortable for the people beside you. You can close them a little, nothing will get damaged.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 6</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 5.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Your hair!</p>
+					<p class="panelbody">
+						For people with long hair: Please tie them or hold them down when riding open air vehicles. We don’t want hair in our mouth and you don’t want saliva on your hair. No one wins.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 7</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 6.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Pass it on</p>
+					<p class="panelbody">
+						When someone tries to hand over their payment towards the driver, pass it to the driver.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 8</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 7.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Let us pass!</p>
+					<p class="panelbody">
+						When walking with friends, try not to occupy all lanes of the sidewalk.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 9</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 8.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Shimmy your way out</p>
+					<p class="panelbody">
+						When on the bus or the mrt/lrt and you are standing, let people who want to reach the door have space to actually move towards the doors.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 10</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 9.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Patience, my pupil</p>
+					<p class="panelbody">
+						After calling out “Para po”, wait for your ride to move towards the side before getting off or saying “para” again.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">TIP 11</p>
+
+				<img class="panelimg" src="Images/illusts new_Etiq 10.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">There’s a line!</p>
+					<p class="panelbody">
+						If there’s a line, please respect it and line up as well. If there's none, then may the odds be ever in your favor.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+		<a id ="backlink" href="guides.html">
+			<div id="backcont">
+				<img id="backbutton" src="Images/Illusts new set_Grey Etiq copy 3.png">
+				<p>Back to GUIDES</p>
+			</div>
+		</a>
+
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>About | CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: white;
+		}
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+		#navcontainer{
+			width: 87%;
+			margin: 0 auto;
+			padding: 0 auto;
+			color: red;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkabout{
+			color: #FAAA58;
+		}
+
+
+		#panel1{
+			color: black;
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 20px;
+		}
+		.panelcontainer{
+			width: 72%;
+			text-align: left;
+			margin: 0 auto;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		.sectionheader{
+			font-family: Gotham (OTF);
+			font-variant: medium;
+			font-size: 30px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.content p{
+			font-family: helvetica;
+			font-weight: lighter;
+		}
+		.sectionheader.panel1{
+			color: #00B094;
+		}
+
+		#panel2{
+			color: black;
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.sectionheader.panel2{
+			color: #C6315A;
+		}
+
+		.row1 p{
+			width: 100%;
+			text-align: left;
+			font-family: helvetica;
+			font-weight: lighter;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.placercont{
+			display: inline-block;
+		}
+		.placercont p{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		/*#imgplacer{
+			width: 30%;
+			height: 14%;
+			background-color: #046297;
+			margin: 0 auto;
+			padding: 0 auto;
+			display: inline-block;
+		}*/
+		.row2 p{
+			width: 100%;
+			text-align: left;
+			font-family: helvetica;
+			font-weight: lighter;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+		#panel3{
+			color: black;
+			font-family: trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-bottom: 50px;
+		}
+		.sectionheader.panel3{
+			color: #FAAA58;
+		}
+		#conpan3 .row1{
+			width: 100%;
+			text-align: left;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#conpan3 .row2{
+			width: 100%;
+			text-align: left;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 15px;
+		}
+		#conpan3 .row2 p{
+			padding-top: 15px;
+		}
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width: 700px){
+			#nav span{
+				padding: 10px;
+			}
+		}
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width: 400px){
+			.navlink{
+				/*font-size: 25px;*/
+				color: white;
+			}
+			.panelcontainer{
+				width: 79%;
+			}
+		}
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+				</div>
+			</div>
+		</div>
+
+		<div id="panel1">
+			<div class="panelcontainer">
+				<p class="sectionheader panel1">What is CommuNaviPH?</p>
+
+				<div class="content conpan1">
+					<p>
+						SakayGuide is your one stop terminal for all your commuting knowledge needs! We feature helpful, illustrated, step-by-step guides for you to follow before you venture out into the Philippine commuting landscape. Each guide features quick tips and tricks to help you move like a veteran.
+					</p>
+					<p>
+						In each guide is a tip to keep you and your valuables safe! We also have a Commuting Etiquette guide to keep your commute nice and peaceful!
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!--<div id="panel2">
+			<div class="panelcontainer">
+				<p class="sectionheader panel2">Da Research</p>
+
+				<div class="content conpan2">
+					<p>
+						Jean shorts literally humblebrag, XOXO chia DIY letterpress chartreuse fashion axe wolf sartorial typewriter PBR&B sustainable butcher. Paleo meggings intelligentsia squid, helvetica cold-pressed tacos forage retro normcore mlkshk stumptown. Offal church-key tacos williamsburg. Kale chips man braid readymade, letterpress keffiyeh locavore heirloom chambray selvage stumptown scenester put a bird on it iPhone. Tattooed mlkshk farm-to-table actually paleo marfa. Gluten-free flannel single-origin coffee vice, taxidermy pour-over asymmetrical quinoa fashion axe four dollar toast knausgaard try-hard mumblecore chia cred. Freegan pork belly distillery flexitarian, austin selvage green juice normcore etsy drinking vinegar.
+					</p>
+
+					<div class="row1">
+						<p>
+							Ennui umami distillery, brooklyn raw denim forage whatever skateboard 3 wolf moon drinking vinegar lo-fi bicycle rights street art. Tote bag leggings shoreditch neutra viral. Dreamcatcher ethical hella ugh, viral direct trade kale chips 90's intelligentsia brooklyn humblebrag. Readymade sriracha organic, poutine craft beer gentrify portland street art 90's hoodie literally. Offal gochujang godard, kale chips kombucha asymmetrical chartreuse ugh fashion axe cornhole green juice kinfolk hammock fingerstache. Tote bag artisan ennui, aesthetic direct trade DIY yr trust fund leggings letterpress hella banjo. Raw denim quinoa kinfolk twee crucifix.
+						</p>
+						<div class="placercont row1">
+							<div id="imgplacer"></div>
+						</div>
+					</div>
+
+					<div class="row2">
+						<div id="imgplacer"></div>
+						<div class="placercont">
+							<p>
+								Try-hard church-key offal, normcore pour-over venmo schlitz cornhole blue bottle. Austin portland microdosing seitan. Green juice hoodie man bun distillery PBR&B. Farm-to-table roof party vegan letterpress XOXO, pickled mustache 3 wolf moon. Chillwave asymmetrical ennui, bushwick williamsburg pug occupy deep v poutine blog mlkshk ugh. Celiac everyday carry poutine, paleo venmo migas tumblr ennui post-ironic. Photo booth pabst slow-carb, four dollar toast vegan fingerstache kale chips mustache.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>!-->
+
+
+		<div id="panel3">
+			<div class="panelcontainer">
+				<p class="sectionheader panel3">History</p>
+
+				<div class="content conpan3">
+					<p>
+						CommuNaviPH's first inception was a guide known plainly as COMMUNAVI. It was a final project requirement for a Graphic Design class. The original guide featured only the main steps and basic illustrations.
+					</p>
+
+					<div class="row1">
+						<p>
+							The next iteration came in the re-modelled form of SakayGuide (not yet launched as of writing). This remodelled the site to fit in with Sakay's branding. This refined the illustrations used, added new content such as the safety tips, walking guide and the alteration of the homepage.
+						</p>
+					</div>
+
+					<div class="row2">
+						<p>
+							The current iteration of CommuNaviPH had the most changes. It now includes a remastered homepage, illustrations,  colors and layout. It also now includes the guides for Commuting Etiquette, an MRT/LRT map and a new PDF Downlaodable version of the guides. It also now includes the CommuCards that can be found both on the facebook page and around the metro.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

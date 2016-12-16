@@ -1,0 +1,614 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>The MRT & LRT Lines | CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #046297;
+		}
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+
+
+		#navcontainer{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkguides{
+			color: #FAAA58;
+		}
+		.clear{
+			clear: all;
+		}
+
+
+
+
+
+		#introcontainer{
+			width: 57%;
+			margin: 0 auto;
+			padding: 50px 0px;
+			position: relative;
+		}
+		#introicon{
+			width: 25%;
+			height: auto;
+			display: inline-block;
+		}
+		#introcontent{
+			width: 69%;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-left: 35px;
+			display: inline-block;
+			position: absolute;
+			top: 45%;
+			transform: translateY(-50%);
+		}
+		.clear{
+			clear: all;
+		}
+		#introtitle{
+			font-size: 30px;
+			font-weight: bold;
+			margin: 10px 0px;
+			padding: 0 auto;
+		}
+		#introbody{
+			font-family: helvetica;
+			font-weight: lighter;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+
+
+
+		#panel0{
+			background-color: #009A84;
+			color: white;
+			font-size: 25px;
+			text-align: center;
+			padding: 10px 0px;
+		}
+
+		#panel0 p{
+			margin: 0px;
+			padding: 0px;
+			font-weight: bold;
+		}
+
+
+
+
+		.panel{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.panelcolor{
+			background-color: #D9EDDE;
+		}
+		.paneltip{
+			background-color: #0B4D3E;
+			color: white;
+		}
+		.panelwhite{
+			background-color: white;
+		}
+		.panelcontainer{
+			width: 67%;
+			margin: 0 auto;
+			padding: 30px 0px;
+			padding-bottom: 50px;
+			position: relative;
+		}
+		.panelcounter{
+			font-size: 25px;
+			margin: 10px 0px 15px 0px;
+			padding: 0 auto;
+			font-weight: bold;
+		}
+		.panelimg{
+			width: 300px;
+			display: inline-block;
+		}
+		.panelheader{
+			font-size: 27px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+		.panelcontent{
+			font-family: helvetica;
+			font-weight: lighter;
+			width: 500px;
+			margin: 0 auto;
+			padding-left: 0 auto;
+			padding-left: 45px;
+			display: inline-block;
+			position: absolute;
+			top: 55%;
+			transform: translateY(-50%);
+		}
+		.panelbody{
+			width: 450px;
+		}
+		#colorinline{
+			color: #009A84;
+			font-weight: bolder;
+		}
+
+
+
+
+
+		.countercontain{
+			margin-bottom: 10px;
+			position: relative;
+		}
+		#tipimg{
+			width: 50px;
+			display: inline-block;
+		}
+		.countertip{
+			padding-left: 5px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+
+		#backlink{
+			text-decoration: none;
+		}
+		#backlink:visited{
+			color: black;
+		}
+		#backcont{
+			margin: 50px 0px;
+			padding-left: 115px;
+			position: relative;
+		}
+		#backbutton{
+			width: 70px;
+			height: 70px;
+			display: inline-block;
+		}
+		#backcont p{
+			font-size: 20px;
+			padding-left: 10px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#soundbutton{
+			position: relative;
+		}
+		#soundimg{
+			width: 50px;
+			display: inline-block;
+		}
+		#soundbutton p{
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width:499px;){
+			/*body{
+				font-size: 15px;
+			}*/
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+		}
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width:700px){
+			#nav span{
+				padding: 0px 24px;
+			}
+			#introicon{
+				width: 40%;
+			}
+			#introcontainer{
+				margin: 0% 0%;
+			}
+			#introcontent{
+				width: 80%;
+			}
+			#introtitle{
+				width: 100%;
+			}
+			#introbody{
+				width: 140%;
+				margin: 0%;
+			}
+			.panel{
+				width: 100%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcounter{
+				font-size: 20px;
+			}
+			.panelimg{
+				width: 235px;
+			}
+			.panelbody{
+				width: 95%;
+			}
+			#tipimg{
+				width: 10%;
+				height:auto;
+			}
+			#backcont{
+				padding-left: 30px;
+			}
+		}
+
+
+		/*FULLSCREEN RECENTERING*/
+		@media screen and (min-width: 701px){
+			.panelcontainer{
+				margin: 0 auto;
+			}
+		}
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="intro">
+			<div id="introcontainer">
+				<img id="introicon" src="Images/illusts new_MLRT.png">
+
+				<div id="introcontent">
+					<p id="introtitle">MRT & LRT</p>
+
+					<p id="introbody">
+						The Metro Railway Transit and Light Railway Transit are the equivalent of subways in other countries. Due to the stormy nature of the Philippines, subways are logically a bad idea. The MRT/LRT can get rather crowded during rush time and currently has approximately the same fare as using road-based transport.
+
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="panel0">
+			<p>HOW TO RIDE THE MRT/LRT</p>
+		</div>
+
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 1</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 1.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Line up</p>
+					<p class="panelbody">
+						Line up at the cashier. The fares per station are usually displayed on the window. <br>Choose between single-journey and stored-value. <br>Prepare your fare before hand.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel paneltip">
+			<div class="panelcontainer">
+				<div class="countercontain">
+					<img id="tipimg" src="Images/illusts_tip1-03.png">
+
+					<p class="panelcounter countertip">TIP 1</p>
+				</div>
+
+				<img class="panelimg" src="Images/illusts new_MLRT T1.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">One time or forever?</p>
+					<p class="panelbody">
+						If you chose stored-value or if your stored-value card still had some remaining balance, skip step 2.
+						<br>As of 2015, the new beep cards act as stored value cards that can be used for LRT 1 & 2, & MRT 3.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 2</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 2.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Get a card</p>
+					<p class="panelbody">
+						Applicable to single journey cards only: Tell the cashier your stop, pay and get your card. (Don’t forget to get the card or your change.)
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 3</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 3.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">You shall pass!</p>
+					<p class="panelbody">
+						Go to the terminals and insert your card. Don’t leave it there, you should get it back!
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 4</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 4.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Line up at the brackets</p>
+					<p class="panelbody">
+						If lines are vague, stand relatively where everyone else is. Sometimes lines don’t form at all, specially during rush hour so just stand there and try not to lose your spot!
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel paneltip">
+			<div class="panelcontainer">
+				<div class="countercontain">
+					<img id="tipimg" src="Images/illusts_tip1-03.png">
+
+					<p class="panelcounter countertip">TIP 2</p>
+				</div>
+
+				<img class="panelimg" src="Images/illusts new_MLRT T2.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Stay at the side</p>
+					<p class="panelbody">
+						When boarding, it is generally a good idea to stand at the sides of the doors. This allows people who are getting off to alight easily and also lets you get to the seats faster. <br>During rush hour, take this a notch higher: stick as close as possible to the door.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 5</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 5.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">The seating race</p>
+					<p class="panelbody">
+						Get on and find a seat. During rush hour, this is a race.<br> If none, find a place to stand that is relatively comfortable. Generally, standing near the doors lets you get off faster if your stop is not far.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 6</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 6.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Hey look, listen!</p>
+					<p class="panelbody">
+						Listen to the announcer for the next stop. When in doubt, check the back of your card for the map. During rush hour, once you hear this, try to start moving towards a door.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 7</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 7.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Time to leave</p>
+					<p class="panelbody">
+						Get down at your station. Insert the card in the terminal and proceed. If you chose a single journey card, just continue. If you chose stored-value you should be able to get it back if it still has balance left.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 8</p>
+
+				<img class="panelimg" src="Images/illusts new_MLRT 8.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">The signs!</p>
+					<p class="panelbody">
+						There will be signs pointing you to your exit. If you’re not sure which way to go, the security guards are willing to help.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel paneltip">
+			<div class="panelcontainer">
+				<div class="countercontain">
+					<img id="tipimg" src="Images/illusts_tip1-03.png">
+
+					<p class="panelcounter countertip">TIP 3</p>
+				</div>
+
+				<img class="panelimg" src="Images/illusts new_MLRT T3.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Foooood!</p>
+					<p class="panelbody">
+						A lot of stations have food stalls in them. Go grab something to munch on.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<a id ="backlink" href="guides.html">
+			<div id="backcont">
+				<img id="backbutton" src="Images/Illusts new set_Grey Etiq copy 3.png">
+				<p>Back to GUIDES</p>
+			</div>
+		</a>
+
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+
+	</body>
+</html>

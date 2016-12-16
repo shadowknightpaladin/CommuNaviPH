@@ -1,0 +1,588 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Walking in the PH | CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #046297;
+		}
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+		#navcontainer{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkguides{
+			color: #FAAA58;
+		}
+		.clear{
+			clear: all;
+		}
+
+
+
+		#introcontainer{
+			width: 57%;
+			margin: 0 auto;
+			padding: 50px 0px;
+			position: relative;
+		}
+		#introicon{
+			width: 25%;
+			height: auto;
+			display: inline-block;
+		}
+		#introcontent{
+			width: 69%;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-left: 35px;
+			display: inline-block;
+			position: absolute;
+			top: 45%;
+			transform: translateY(-50%);
+		}
+		.clear{
+			clear: all;
+		}
+		#introtitle{
+			font-size: 30px;
+			font-weight: bold;
+			margin: 10px 0px;
+			padding: 0 auto;
+		}
+		#introbody{
+			font-family: helvetica;
+			font-weight: lighter;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+
+		#panel0{
+			background-color: #FAAA58;
+			width: 100%;
+			color: white;
+			font-size: 25px;
+			text-align: center;
+			padding: 10px 0px;
+		}
+
+		#panel0 p{
+			margin: 0px;
+			padding: 0px;
+			font-weight: bold;
+		}
+
+
+		.panel{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.panelcolor{
+			background-color: #F3ECDE;
+		}
+		.paneltip{
+			background-color: #8C8072;
+			color: white;
+		}
+		.panelwhite{
+			background-color: white;
+		}
+		.panelcontainer{
+			width: 67%;
+			margin: 0 auto;
+			padding: 30px 0px;
+			padding-bottom: 50px;
+			position: relative;
+		}
+		.panelcounter{
+			font-size: 25px;
+			margin: 10px 0px 15px 0px;
+			padding: 0 auto;
+			font-weight: bold;
+		}
+		.panelimg{
+			width: 300px;
+			display: inline-block;
+		}
+		.panelheader{
+			font-size: 27px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+		.panelcontent{
+			font-family: helvetica;
+			font-weight: lighter;
+			width: 500px;
+			margin: 0 auto;
+			padding-left: 0 auto;
+			padding-left: 45px;
+			display: inline-block;
+			position: absolute;
+			top: 55%;
+			transform: translateY(-50%);
+		}
+		.panelbody{
+			width: 450px;
+		}
+
+
+
+
+		.countercontain{
+			margin-bottom: 10px;
+			position: relative;
+		}
+		#tipimg{
+			width: 50px;
+			display: inline-block;
+		}
+		.countertip{
+			padding-left: 5px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+		#backlink{
+			text-decoration: none;
+		}
+		#backlink:visited{
+			color: black;
+		}
+		#backcont{
+			margin: 50px 0px;
+			padding-left: 115px;
+			position: relative;
+		}
+		#backbutton{
+			width: 70px;
+			height: 70px;
+			display: inline-block;
+		}
+		#backcont p{
+			font-size: 20px;
+			padding-left: 10px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width:499px;){
+			/*body{
+				font-size: 15px;
+			}*/
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+		}
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width:700px){
+			#nav span{
+				padding: 0px 24px;
+			}
+			#introicon{
+				width: 40%;
+			}
+			#introcontainer{
+				margin: 0% 0%;
+			}
+			#introcontent{
+				width: 80%;
+			}
+			#introtitle{
+				width: 100%;
+			}
+			#introbody{
+				width: 140%;
+				margin: 0%;
+			}
+			.panel{
+				width: 100%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcounter{
+				font-size: 20px;
+			}
+			.panelimg{
+				width: 235px;
+			}
+			.panelbody{
+				width: 95%;
+			}
+			#tipimg{
+				width: 10%;
+				height:auto;
+			}
+			#backcont{
+				padding-left: 30px;
+			}
+		}
+
+
+		/*FULLSCREEN RECENTERING*/
+		@media screen and (min-width: 701px){
+			.panelcontainer{
+				margin: 0 auto;
+			}
+		}
+
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="intro">
+			<div id="introcontainer">
+				<img id="introicon" src="Images/illusts new_Walking.png">
+
+				<div id="introcontent">
+					<p id="introtitle">Walking</p>
+
+					<p id="introbody">
+						It’s unavoidable to have to walk to get around in the Philippines. However, even when walking short distances, it’s best to be aware of your surroundings. Here are some tips and tricks to help you out!
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="panel0">
+			<p>STAY SAFE WHEN WALKING!</p>
+		</div>
+
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 1</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 2.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Walk on sidewalks</p>
+					<p class="panelbody">
+						If you’re on the road because there are no sidewalks, walk against the flow so that the drivers can see you from a much further distance.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel paneltip">
+			<div class="panelcontainer">
+				<div class="countercontain">
+					<img id="tipimg" src="Images/illusts_tip1-03.png">
+
+					<p class="panelcounter countertip">TIP 1</p>
+				</div>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 11.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Beware of Motorcycles</p>
+					<p class="panelbody">
+						Motorcycles sometimes run on the sidewalk. Be aware of your back!
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 2</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 2.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Close your bags!</p>
+					<p class="panelbody">
+						When walking, keep your bags facing the inside of the sidewalk. This prevents it from being easily snatched.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 3</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 3.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Keep aware</p>
+					<p class="panelbody">
+						Act like you’re aware but not paranoid or scared. You’ll be okay. You got this.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 4</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Go behind!</p>
+					<p class="panelbody">
+						When crossing, always go behind the vehicle of the car infront of you. Never move to cross infront of the car. This way, the driver of the next car will see you
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 5</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 4.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Look this way</p>
+					<p class="panelbody">
+						Look towards incoming traffic, not the otherside. <br>Please.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 6</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 5.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Don’t run!</p>
+					<p class="panelbody">
+						Don’t run. Cross at a steady pace & keep a hand up if you must.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 7</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 6.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Too slow</p>
+					<p class="panelbody">
+						Some cars will slow down to let you pass. Don’t walk too slowly or dally from crossing. Taking too long will irritate the drivers.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 8</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 7.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Blah blah blah</p>
+					<p class="panelbody">
+						Don’t chat or text while crossing.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 9</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 8.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Stay in between</p>
+					<p class="panelbody">
+						If you need to stop while crossing, don’t stop in the middle of the road. Stop between lanes. Don’t step backwards either. Unless it’s the sidewalk. Even then, be careful.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 10</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 9.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Keep it safe</p>
+					<p class="panelbody">
+						Keep everything that’s valuable in a safe place. No, your cellphone in your breastpocket is not a safe place.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">NOTE 11</p>
+
+				<img class="panelimg" src="Images/illusts new_Walking 1 copy 10.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Blending in</p>
+					<p class="panelbody">
+						At night, avoid wearing dark colored shirts as it’s more difficult to pick out in the dark. Wear light colored shirts or have something that’ll reflect immediately when headlights hit it.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<a id ="backlink" href="guides.html">
+			<div id="backcont">
+				<img id="backbutton" src="Images/Illusts new set_Grey Etiq copy 3.png">
+				<p>Back to GUIDES</p>
+			</div>
+		</a>
+
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+
+	</body>
+</html>

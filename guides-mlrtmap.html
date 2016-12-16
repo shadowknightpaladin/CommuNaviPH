@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+
+	<title>MRT & LRT Map</title>
+
+	<script src="jquery-2.1.3.min.js"></script>
+</html>
+
+<style>
+	@font-face{
+		font-family: 'Gotham Black';
+		src: url('Fonts/Gotham-Black.otf');
+	}
+	@font-face{
+		font-family: 'Trebuchet MS';
+		src: url('Fonts/TREBUC.TTF');
+	}
+	@font-face{
+		font-family: 'helvetica';
+		src: url('Fonts/HELVETICA.TTF');
+	}
+	body{
+		font-family: Trebuchet MS;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	a{
+		text-decoration: none;
+	}
+	a:visited{
+		color: #046297;
+	}
+	#header{
+		background-color: #046297;
+		width: 100%;
+		font-family: Gotham Black;
+		color: white;
+		text-align: center;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	#headertxt{
+		padding-top: 45px;
+	}
+	#SiteName{
+		font-size: 45px;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	#titlelink:visited{
+		color: white;
+	}
+
+
+		
+	#navcontainer{
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 auto;
+		color: red;
+	}
+	#nav{
+		font-family: Trebuchet MS;
+		font-size: 17px;
+		text-align: center;
+		margin: 0 auto;
+		padding-top: 35px;
+		padding-bottom: 20px;
+		display: inline-block;
+	}
+	#nav span{
+		margin: 0 auto;
+		padding: 0px 40px;
+		display: inline-block;
+	}
+	.navlink{
+		color: white;
+		padding: 10px;
+		border-radius: 10px;
+		}
+	.navlink:hover{
+		text-decoration: underline;
+		transition: 0.5s 0.2s all;
+	}
+	.navlink:visited{
+		color: white;
+	}
+	#linkguides{
+		color: #FAAA58;
+	}
+
+
+
+	#maparea{
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 auto;
+		text-align: center;
+	}
+	#mlrtmap{
+		width: auto;
+		height: 800px;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+
+
+
+	#landmarkcont{
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+	.lrt1{
+		background-color: #00B094;
+		color: white;
+		font-family: Gotham Black;
+		font-size: 24px;
+		text-align: center;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	.lrt2{
+		background-color: #854098;
+		color: white;
+		font-family: Gotham Black;
+		font-size: 24px;
+		text-align: center;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	.mrt3{
+		background-color:#C6305A;
+		color: white;
+		font-family: Gotham Black;
+		font-size: 24px;
+		text-align: center;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	.landmarkheadtxt{
+		margin: 0 auto;
+		padding: 5px;
+	}
+
+
+	tr{
+		width: 100%;
+		padding: 0px 5px 0px 5px;
+	}
+	/*tr:nth-child(even){
+		background-color: #D9EDDE;
+		width: 100%;
+		padding: 0px 5px 0px 5px;
+	}*/
+	#stationscont{
+		width: 90%;
+		margin: 0 auto;
+		padding: 15px 0px 15px 0px;
+		text-align: center;
+	}
+
+	.icon{
+		width: 9%;
+		margin: 0 auto;
+		padding: 10px 0px 10px 0px;
+		text-align: center;
+	}
+	.landmarkicon{
+		width: 60px;
+		height: auto;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	.text{
+		width: 24%;
+		padding: 10px 0px 10px 0px;
+	}
+	.stationbody{
+		text-align: left;
+		padding-left: 10px;
+	}
+	.stationname{
+		font-size: 20px;
+		font-weight: bold;
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	.landmarks{
+		margin: 0 auto;
+		padding: 0 auto;
+	}
+	#mrtguide{
+		width: 100%;
+		background-color:#046297;
+		margin: 0 auto;
+		padding: 10px 0px;
+		text-align: center;
+	}
+	#mrtguide p{
+		color: white;
+		margin: 0 auto;
+		padding: 5px;
+	}
+	#mlrtlink{
+		color: white;
+		text-decoration: underline;
+	}
+
+
+	#footercontainer{
+		color: white;
+		background-color: black;
+		text-align: center;
+		margin: 0 auto;
+		padding: 0 auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.introplink{
+		font-family: Gotham Black;
+		font-weight: bold;
+	}
+	.introplink:visited{
+		color: white;
+	}
+
+
+	/*HALF SCREEN VERSION*/
+	@media screen and (max-width:700px){
+		#nav span{
+			padding: 10px;
+		}
+		#mlrtmap{
+			width: auto;
+			height: 700px;
+		}
+		#landmarkicon{
+			width: 45px;
+		}
+		.stationname{
+			font-size: 15px;
+		}
+		.landmarks{
+			font-size: 12px;
+		}
+	}
+</style>
+
+<body>
+	<div id="header">
+		<div id="headertxt">
+			<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+		</div>
+
+		<div id="navcontainer">
+			<div id="nav">
+				<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+				<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+				<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+				<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+			</div>
+		</div>
+	</div>
+
+	<div id="maparea">
+		<img id="mlrtmap" src="Images/Map 1-01.png">
+	</div>
+
+
+
+	<div id="landmarkcont">
+		<div class="landmarkheader lrt1">
+			<p class="landmarkheadtxt">LRT Line 1</p>
+		</div>
+
+		<div id="stationscont">
+			<table>
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Roosevelt</p>
+							<p class="landmarks">
+								Munoz Market
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 12.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Balintawak</p>
+							<p class="landmarks">
+								Balintawak Market
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Roosevelt</p>
+							<p class="landmarks">
+								Bonifacio Monument
+								<br>Caloocan Cathedral
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 17.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">5th Avenue</p>
+							<p class="landmarks">
+								La Loma Cemetery
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">R.Papa</p>
+							<p class="landmarks">
+								Manila Chinese Cemetery
+								<br>Manila North Cemetery
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 15.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Abad Santos</p>
+							<p class="landmarks">
+								Ospital ng Tondo
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Blumentritt</p>
+							<p class="landmarks">
+								San Roque de Manila Parish
+								<br>SM San Lazaro
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 14.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Tayuman</p>
+							<p class="landmarks">
+								Department of Health
+								<br>University of Santo Toma
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 15.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Bambang</p>
+							<p class="landmarks">
+								Metropolitan Medical Center
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Doroteo Jose</p>
+							<p class="landmarks">
+								Recto Stattion Connect
+								<br>Far Eastern University
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Carriedo</p>
+							<p class="landmarks">
+								Quiapo/Binondo/Santa Cruz Church
+								<br>Plaza Miranda
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Central Terminal</p>
+							<p class="landmarks">
+								Manila Cathedral
+								<br>Intramuros
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 14.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">UN Station</p>
+							<p class="landmarks">
+								National Museum
+								<br>Rizal Park
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 16.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Pedro Gil</p>
+							<p class="landmarks">
+								University of the Philippines Manila
+								<br>Robinson's Place Manila
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Quirino</p>
+							<p class="landmarks">
+								Malate Church
+								<br>Manila Zoo
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Vito Cruz</p>
+							<p class="landmarks">
+								De la Salle University
+								<br>Cultural Center of the Philippines
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 14.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Gil Puyat</p>
+							<p class="landmarks">
+								Senate Building
+								<br>Star City
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 14.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Libertad</p>
+							<p class="landmarks">
+								Department of Foreign Affairs
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 12.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">EDSA</p>
+							<p class="landmarks">
+								EDSA Monument
+								<br>SM Mall of Asia
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/teal_Grey Etiq copy 13.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Baclaran</p>
+							<p class="landmarks">
+								Baclaran Church
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<div id="landmarkcont">
+		<div class="landmarkheader lrt2">
+			<p class="landmarkheadtxt">LRT Line 2</p>
+		</div>
+
+		<div id="stationscont">
+			<table>
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Recto</p>
+							<p class="landmarks">
+								Doroteo Jose Station Connect
+								Far Eastern University
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 12.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Legarda</p>
+							<p class="landmarks">
+								Malacanang Palace
+								<br>San Beda College
+								<br> Centro Escolar University
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 12.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Pureza</p>
+							<p class="landmarks">
+								Mabini Shrine
+								<br> Polytechnic Unversity of the Philippines
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">V.Mapa</p>
+							<p class="landmarks">
+								SM City Santa Mesa
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 12.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">J.Ruiz</p>
+							<p class="landmarks">
+								Filoil Flying V Arena
+								<br>Pinaglabanan Shrine
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Gilmore</p>
+							<p class="landmarks">
+								Greenhills Shopping Center
+								<br>St. Luke's Medical Center
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Betty Go-Belmonte</p>
+							<p class="landmarks">
+								Cubao Cathedral
+								<br>Trinity Unviersity of Asia
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 11.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Araneta Center Cubao</p>
+							<p class="landmarks">
+								Smart Araneta Coliseum
+								<br>Farmer's Plaza
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Anonas</p>
+							<p class="landmarks">
+								Technological Institute of the Philippines Quezon City
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Katipunan</p>
+							<p class="landmarks">
+								Ateneo de Manila University
+								<br>University of the Philippines Diliman
+								<br> Miriam College
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/purple_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Santolan</p>
+							<p class="landmarks">
+								Riverbanks Center,
+								<br>SM City Marikina
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="landmarkcont">
+		<div class="landmarkheader mrt3">
+			<p class="landmarkheadtxt">MRT 3</p>
+		</div>
+
+		<div id="stationscont">
+			<table>
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">North Avenue</p>
+							<p class="landmarks">
+								SM City North Edsa
+								<br>TriNoma
+								<br>Veterans Medical Memorial Center
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 11.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Quezon Avenue</p>
+							<p class="landmarks">
+								ABS-CBN
+								<br>Philippine Lung Center
+								<br>Ninoy Aquino Parks & Wildlife Center
+								<br>Quezon Memorial Circle
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 15.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Kamuning</p>
+							<p class="landmarks">
+								GMA Network Center
+								<br>Land Transportation Office
+								<br>National Kidney and Transplant Institute
+								<br>Philippine Heart Center
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Araneta Center-Cubao</p>
+							<p class="landmarks">
+								Araneta Center-Cubao Station Connect
+								<br>Smart Araneta Coliseum
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 14.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Santolan</p>
+							<p class="landmarks">
+								Camp Aguinaldo
+								<br>Camp Crame
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 12.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Ortigas</p>
+							<p class="landmarks">
+								Department of Transportation and Communications
+								<br>EDSA Shrine
+								<br>SM Megamall
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Shaw Boulevard</p>
+							<p class="landmarks">
+								Department of Education
+								<br>PhilSports Arena
+								<br>University of Asia and the Pacific
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 16.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Boni</p>
+							<p class="landmarks">
+								Rizal Technological University,
+								<br>TV5 Media Center
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 13.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Guadalupe</p>
+							<p class="landmarks">
+								Guadalupe Church
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowcolor">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 14.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Buendia</p>
+							<p class="landmarks">
+								Department of Trade and Industry
+								<br>Metropolitan Manila Development Authority
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Ayala</p>
+							<p class="landmarks">
+								Ayala Museum
+								<br>Bonifacio Global City
+								<br>The Mind Museum
+							</p>
+						</div>
+					</td>
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 14.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Magallanes</p>
+							<p class="landmarks">
+								EDSA Train Connection
+							</p>
+						</div>
+					</td>
+				</tr>
+
+				<tr class="lrt1row rowwhite">
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 16.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Shaw Boulevard</p>
+							<p class="landmarks">
+								Department of Education
+								<br>PhilSports Arena
+								<br>University of Asia and the Pacific
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 16.png">
+					</td>
+					<td class="text" bordercolor="#D9EDDE">
+						<div class="stationbody">
+							<p class="stationname">Boni</p>
+							<p class="landmarks">
+								Rizal Technological University,
+								<br>TV5 Media Center
+							</p>
+						</div>
+					</td>
+
+					<td class="icon">
+						<img class="landmarkicon" src="Images/pink_Grey Etiq copy 11.png">
+					</td>
+					<td class="text">
+						<div class="stationbody">
+							<p class="stationname">Taft Avenue</p>
+							<p class="landmarks">
+								Mall of Asia Arena
+								<br>SM Mall of Asia
+								<br>SMX Convention Center
+							</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<div id="mrtguide">
+		<p>Want to learn how to use the MRT or LRT?</p>
+		<a id="mlrtlink" href="guides-mlrt.html">Click Here!</a>
+	</div>
+
+
+	<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+</body>

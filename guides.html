@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Guides | CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #046297;
+		}
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+		#navcontainer{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+			color: red;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkguides{
+			color: #FAAA58;
+		}
+
+
+		#ButtonContainer{
+			margin: 0 auto;
+			margin-top: 45px;
+			padding: 0 auto;
+			padding-bottom: 55px;
+		}
+		.buttonrow{
+			width: 74%;
+			margin: 0 auto;
+			padding: 0 auto;
+			text-align: center;
+		}
+		.buttonrow.row2{
+			padding-top: 40px;
+		}
+		.buttonrow.row3{
+			padding-top: 40px;
+		}
+
+
+		.buttonround{
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			margin: 0px 35px;
+			padding: 0 auto;
+			border: 0px;
+			display: inline-block;
+		}
+		.buttonround:hover{
+			border-radius: 0%;
+			transition: 0.5s 0.2s all;
+		}
+		.buttextcont{
+			margin: 0 auto;
+			padding: 0 auto;
+			display: inline-block;
+		}
+		.buttextcont a{
+			text-decoration: none;
+		}
+		.buttontext{
+			font-family: Trebuchet MS;
+			display: block;
+		}
+		.buttonround.walk{
+			background-image: url("Images/illusts new-08.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #FAAA58;
+		}
+		.walktext{
+			color: #FAAA58;
+		}
+		.buttonround.trike{
+			background-image: url("Images/illusts new-11.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #00B094;
+		}
+		.triketext{
+			color: #00B094;
+		}
+		.buttonround.jeep{
+			background-image: url("Images/icon-06.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #C6315A;
+		}
+		.jeeptext{
+			color: #C6315A;
+		}
+		.buttonround.fx{
+			background-image: url("Images/illusts new-14.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #854197;
+		}
+		.fxtext{
+			color: #854197;
+		}
+
+
+		.row2 .taxi{
+			background-image: url("Images/illusts new-23.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #C6315A;
+		}
+		.taxitext{
+			color: #C6315A;
+		}
+		.row2 .bus{
+			background-image: url("Images/illusts new-17.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #FAAA58;
+		}
+		.bustext{
+			color: #FAAA58;
+		}
+		.row2 .mlrt{
+			background-image: url("Images/illusts new-20.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #00B094;
+		}
+		.mlrttext{
+			color: #00B094;
+		}
+		.row2 .misc{
+			background-image: url("Images/illusts new-28.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #854197;
+		}
+		.misctext{
+			color: #854197;
+		}
+
+
+		.row3 .etiq{
+			background-image: url("Images/illusts new-30.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #046297;
+		}
+		.etiqtext{
+			color: #046297;
+		}
+		.row3 .mlrtmap{
+			background-image: url("Images/illusts new_White MLRT Map.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #046297;
+		}
+		.mlrttext{
+			color: #046297;
+		}
+		.row3 .cometmap{
+			background-image: url("Images/Illusts new set_Grey Etiq copy 2.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #046297;
+		}
+		.comettext{
+			color: #046297;
+		}
+
+
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width:700px){
+			#nav span{
+				padding: 10px;
+			}
+			.buttonrow{
+				width: 100%;
+			}
+			.buttontext{
+				margin-bottom: 20px;
+			}
+		}
+
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width:400px;){
+			.navlink{
+				/*font-size: 25px;*/
+				color: white;
+			}
+			.ButtonContainer{
+				width: 100%
+			}
+			.buttonrow{
+				width: 100%;
+			}
+			.buttontext{
+				font-size: 20px;
+				margin-bottom: 20px;
+			}
+		}
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="ButtonContainer">
+			<div class="buttonrow">
+				<div class="buttextcont"><a href="guides-walking.html">
+					<div class="buttonround walk"></div>
+					<p class="buttontext walktext">Walking</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-trike.html">
+					<div class="buttonround trike"></div>
+					<p class="buttontext triketext">Tricycle</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-jeep.html">
+					<div class="buttonround jeep"></div>
+					<p class="buttontext jeeptext">Jeepney</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-fx.html">
+					<div class="buttonround fx"></div>
+					<p class="buttontext fxtext">FX</p>
+				</a></div>
+			</div>
+
+			<div class="buttonrow row2">
+				<div class="buttextcont"><a href="guides-taxi.html">
+					<div class="buttonround taxi"></div>
+					<p class="buttontext taxitext">Taxi</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-bus.html">
+					<div class="buttonround bus"></div>
+					<p class="buttontext bustext">Bus</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-mlrt.html">
+					<div class="buttonround mlrt"></div>
+					<p class="buttontext mlrttext">MRT/LRT</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-misc.html">
+					<div class="buttonround misc"></div>
+					<p class="buttontext misctext">Others</p>
+				</a></div>
+			</div>
+
+
+			<div class="buttonrow row3">
+				<div class="buttextcont"><a href="guides-etiq.html">
+					<div class="buttonround etiq"></div>
+					<p class="buttontext etiqtext">Commuting Etiquette</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-mlrtmap.html">
+					<div class="buttonround mlrtmap"></div>
+					<p class="buttontext mlrttext">MRT/LRT <br>Route Guide</p>
+				</a></div>
+				<!--<div class="buttextcont"><a href="guides-cometmap.html">
+					<div class="buttonround cometmap"></div>
+					<p class="buttontext comettext">PDF Download!</p>
+				</a></div>!-->
+			</div>
+		</div>
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

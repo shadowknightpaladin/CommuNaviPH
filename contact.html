@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Contact Us | CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #046297;
+		}
+
+
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+		#navcontainer{
+			width: 87%;
+			margin: 0 auto;
+			padding: 0 auto;
+			color: red;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkabout{
+			color: #FAAA58;
+		}
+
+
+		#panel1{
+			color: black;
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-bottom: 30px;
+		}
+		.panelcontainer{
+			width: 72%;
+			text-align: left;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 35px;
+		}
+		.sectionheader{
+			font-family: Gotham (OTF);
+			font-variant: medium;
+			font-size: 30px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.sectionheader.panel1{
+			color: #00B094;
+		}
+		.content p{
+			font-family: helvetica;
+			font-weight: lighter;
+		}
+
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width: 700px){
+			#nav span{
+				padding: 10px;
+			}
+		}
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width: 400px){
+			#header{
+				height: 200px;
+			}
+			.navlink{
+				/*font-size: 25px;*/
+				color: white;
+			}
+			.sectionheader{
+				/*font-size: 40px;*/
+				padding-top: 15px;
+			}
+			.panelcontainer{
+				width: 80%;
+			}
+		}
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+			</div>
+		</div>
+
+
+
+		<div id="panel1">
+			<div class="panelcontainer">
+				<p class="sectionheader panel1">Want to get in touch?</p>
+
+				<div class="content conpan1">
+					<p>
+						Email us at veronicaandrea.oliva@gmail.com
+					</p>
+					<p>
+						Facebook: <a href="http://facebook.com/communaviph/">CommuNaviPH</a>
+					</p>
+					<p>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

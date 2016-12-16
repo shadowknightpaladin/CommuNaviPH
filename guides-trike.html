@@ -1,0 +1,567 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Tricycles in the PH | CommuNaviPH</title>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			font-family: Trebuchet MS;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #046297;
+		}
+
+		#header{
+			background-color: #046297;
+			width: 100%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#headertxt{
+			padding-top: 45px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+
+
+
+		#navcontainer{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#nav{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 35px;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+		#nav span{
+			margin: 0 auto;
+			padding: 0px 40px;
+			display: inline-block;
+		}
+		.navlink{
+			color: white;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlink:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		.navlink:visited{
+			color: white;
+		}
+		#linkguides{
+			color: #FAAA58;
+		}
+		.clear{
+			clear: all;
+		}
+
+
+
+
+
+		#introcontainer{
+			width: 57%;
+			margin: 0 auto;
+			padding: 50px 0px;
+			position: relative;
+		}
+		#introicon{
+			width: 25%;
+			height: auto;
+			display: inline-block;
+		}
+		#introcontent{
+			width: 69%;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-left: 35px;
+			display: inline-block;
+			position: absolute;
+			top: 45%;
+			transform: translateY(-50%);
+		}
+		.clear{
+			clear: all;
+		}
+		#introtitle{
+			font-size: 30px;
+			font-weight: bold;
+			margin: 10px 0px;
+			padding: 0 auto;
+		}
+		#introbody{
+			font-family: helvetica;
+			font-weight: lighter;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+
+
+
+		#panel0{
+			background-color: #009A84;
+			width: 100%;
+			color: white;
+			font-size: 25px;
+			text-align: center;
+			padding: 10px 0px;
+		}
+
+		#panel0 p{
+			margin: 0px;
+			padding: 0px;
+			font-weight: bold;
+		}
+
+
+
+
+		.panel{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		.panelcolor{
+			background-color: #D9EDDE;
+		}
+		.paneltip{
+			background-color: #8C8072;
+			color: white;
+		}
+		.panelwhite{
+			background-color: white;
+		}
+		.panelcontainer{
+			width: 67%;
+			margin: 0 auto;
+			padding: 30px 0px;
+			padding-bottom: 50px;
+			position: relative;
+		}
+		.panelcounter{
+			font-size: 25px;
+			margin: 10px 0px 15px 0px;
+			padding: 0 auto;
+			font-weight: bold;
+		}
+		.panelimg{
+			width: 300px;
+			display: inline-block;
+		}
+		.panelheader{
+			font-size: 27px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+		.panelcontent{
+			font-family: helvetica;
+			font-weight: lighter;
+			width: 500px;
+			margin: 0 auto;
+			padding-left: 0 auto;
+			padding-left: 45px;
+			display: inline-block;
+			position: absolute;
+			top: 55%;
+			transform: translateY(-50%);
+		}
+		.panelcontainer{
+			width: 67%;
+			margin: 0 auto;
+			padding: 30px 0px;
+			padding-bottom: 50px;
+			position: relative;
+		}
+		.panelcounter{
+			font-size: 25px;
+			margin: 10px 0px 15px 0px;
+			padding: 0 auto;
+			font-weight: bold;
+		}
+		.panelimg{
+			width: 300px;
+			display: inline-block;
+		}
+		.panelheader{
+			font-size: 27px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+		.panelcontent{
+			font-family: helvetica;
+			font-weight: lighter;
+			width: 500px;
+			margin: 0 auto;
+			padding-left: 0 auto;
+			padding-left: 45px;
+			display: inline-block;
+			position: absolute;
+			top: 55%;
+			transform: translateY(-50%);
+		}
+		.panelbody{
+			width: 450px;
+		}
+		#colorinline{
+			color: #009A84;
+			font-weight: bolder;
+		}
+
+
+
+
+
+		.countercontain{
+			margin-bottom: 10px;
+			position: relative;
+		}
+		#tipimg{
+			width: 50px;
+			display: inline-block;
+		}
+		.countertip{
+			padding-left: 5px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+
+		#backlink{
+			text-decoration: none;
+		}
+		#backlink:visited{
+			color: black;
+		}
+		#backcont{
+			margin: 50px 0px;
+			padding-left: 115px;
+			position: relative;
+		}
+		#backbutton{
+			width: 70px;
+			height: 70px;
+			display: inline-block;
+		}
+		#backcont p{
+			font-size: 20px;
+			padding-left: 10px;
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#soundbutton{
+			position: relative;
+		}
+		#soundimg{
+			width: 50px;
+			display: inline-block;
+		}
+		#soundbutton p{
+			display: inline-block;
+			position: absolute;
+			top: 50%
+			transform: translateY(-50%);
+		}
+
+
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+
+		/*MOBILE VERSION*/
+		@media screen,handheld and (max-width:499px;){
+			/*body{
+				font-size: 15px;
+			}*/
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+		}
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width:700px){
+			#nav span{
+				padding: 0px 24px;
+			}
+			#introicon{
+				width: 40%;
+			}
+			#introcontainer{
+				margin: 0% 0%;
+			}
+			#introcontent{
+				width: 80%;
+			}
+			#introtitle{
+				width: 100%;
+			}
+			#introbody{
+				width: 140%;
+				margin: 0%;
+			}
+			.panel{
+				width: 100%;
+			}
+			.panelcontainer{
+				margin: 0% 5%;
+			}
+			.panelcontent{
+				width: 64%;
+			}
+			.panelcounter{
+				font-size: 20px;
+			}
+			.panelimg{
+				width: 235px;
+			}
+			.panelbody{
+				width: 95%;
+			}
+			#tipimg{
+				width: 10%;
+				height:auto;
+			}
+			#backcont{
+				padding-left: 30px;
+			}
+		}
+
+
+		/*FULLSCREEN RECENTERING*/
+		@media screen and (min-width: 701px){
+			.panelcontainer{
+				margin: 0 auto;
+			}
+		}
+	</style>
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+			</div>
+
+			<div id="navcontainer">
+				<div id="nav">
+					<span><a class="navlink linkhome" href="index.html">HOME</a></span>
+					<span><a class="navlink linkabout" href="about.html">ABOUT</a></span>
+					<span><a class="navlink linkguides" href="guides.html">GUIDES</a></span>
+					<span><a class="navlink linkcontact" href="contact.html">CONTACT</a></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="intro">
+			<div id="introcontainer">
+				<img id="introicon" src="Images/illusts new_Trike.png">
+
+				<div id="introcontent">
+					<p id="introtitle">Tricycle</p>
+
+					<p id="introbody">
+						Also known as the Trike, it is one of the most common forms of transport, the Tricycle can carry up to 5 passengers (or more, if they push it). It has 2 modes: Regular, which would wait for all 5 passengers, and Special, which would cater to only you and your companions for a much higher price.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="panel0">
+			<p>HOW TO RIDE A TRICYCLE (REGULAR)</p>
+		</div>
+
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 1</p>
+
+				<img class="panelimg" src="Images/illusts new_trike p1.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">The waiting game</p>
+					<p class="panelbody">
+						Get on the tricycle and wait for it to fill up. This usually means 2-3 people inside the cart and 2 people behind the driver.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 2</p>
+
+				<img class="panelimg" src="Images/illusts new_trike p2.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Para po!!</p>
+					<p class="panelbody">
+						Tell the driver <span id="colorinline">"Para po”</span> (Please Stop) when you are near or at your destination.
+					</p>
+
+					<!--<div id="soundbutton">
+						<img id="soundimg" src="Images/Illusts new set_White Sound.png">
+						<p>Click to hear <span id="colorinline">"Para po”</span></p>
+					</div>!-->
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 3</p>
+
+				<img class="panelimg" src="Images/illusts new_trike p3.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Fork it over</p>
+					<p class="panelbody">
+						Pay once you get off. Don’t forget to slip in a <span id="colorinline">“Thank you”</span>!
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="panel0">
+			<p>HOW TO RIDE A TRICYCLE (SPECIAL)</p>
+		</div>
+
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 1</p>
+
+				<img class="panelimg" src="Images/illusts new_Trike 1.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">All by myself</p>
+					<p class="panelbody">
+						Tell the driver your destination beforehand. ‘Special’ tricycles will only ferry you and your companions so no need to wait!
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelwhite">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 2</p>
+
+				<img class="panelimg" src="Images/illusts new_trike 2.png">
+
+				<div class="panelcontent cont1">
+					<p class="panelheader">Directions please!</p>
+					<p class="panelbody">
+						Board your tricycle. Give directional instructions as needed.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panelcolor">
+			<div class="panelcontainer">
+				<p class="panelcounter">STEP 3</p>
+
+				<img class="panelimg" src="Images/illusts new_trike p3.png">
+
+				<div class="panelcontent">
+					<p class="panelheader">Pay up</p>
+					<p class="panelbody">
+						Pay once you get off. Don’t forget to slip in a <span id="colorinline">“Thank you”</span>!
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<a id ="backlink" href="guides.html">
+			<div id="backcont">
+				<img id="backbutton" src="Images/Illusts new set_Grey Etiq copy 3.png">
+				<p>Back to GUIDES</p>
+			</div>
+		</a>
+
+
+
+		<div id="footercontainer">
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+
+	</body>
+</html>
