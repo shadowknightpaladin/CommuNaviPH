@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>CommuNaviPH</title>
+
+		<script src="jquery-2.1.3.min.js"></script>
+	</head>
+
+	<style>
+		@font-face{
+			font-family: 'Gotham Black';
+			src: url('Fonts/Gotham-Black.otf');
+		}
+		@font-face{
+			font-family: 'Trebuchet MS';
+			src: url('Fonts/TREBUC.TTF');
+		}
+		@font-face{
+			font-family: 'helvetica';
+			src: url('Fonts/HELVETICA.TTF');
+		}
+		body{
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:visited{
+			color: #C6315A;
+		}
+		#container{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#header{
+			background-color: #046297;
+			width: 100%;
+			height: 16%;
+			font-family: Gotham Black;
+			color: white;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-bottom: 20px;
+		}
+		#headertxt{
+			padding-top: 40px;
+		}
+		#SiteName{
+			font-size: 45px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#blurb{
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			margin: 0 auto;
+			padding: 5px;
+		}
+		#blurb p{
+			margin: 0 auto;
+			padding-top: 5px;
+		}
+
+		#container{
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#nav{
+			width: 100%;
+			font-family: Trebuchet MS;
+			font-size: 17px;
+			text-align: center;
+			width: 100%;
+			margin: 0 auto;
+			padding: 20px 0px 20px 0px;
+			display: inline-block;
+		}
+		#nav span{
+			width: 100%;
+			padding: 0px 40px;
+		}
+		.navlinks{
+			color: #046297;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.navlinks:hover{
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		#linkhome{
+			color: #C6315A;
+		}
+		#linkhome:hover{
+			background-color: #046297;
+			color: white;
+			text-decoration: underline;
+			transition: 0.5s 0.2s all;
+		}
+		#titlelink:visited{
+			color: white;
+		}
+
+
+				#ButtonContainer{
+			margin: 0 auto;
+			margin-top: 45px;
+			padding: 0 auto;
+			padding-bottom: 55px;
+		}
+		.buttonrow{
+			width: 74%;
+			margin: 0 auto;
+			padding: 0 auto;
+			text-align: center;
+		}
+		.buttonrow.row2{
+			padding-top: 40px;
+		}
+		.buttonrow.row3{
+			padding-top: 40px;
+		}
+
+
+		.buttonround{
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			margin: 0px 35px;
+			margin-bottom: 25px;
+			padding: 0 auto;
+			border: 0px;
+			display: inline-block;
+		}
+		.buttonround:hover{
+			border-radius: 0%;
+			transition: 0.5s 0.2s all;
+		}
+		.buttextcont{
+			margin: 0 auto;
+			padding: 0 auto;
+			display: inline-block;
+		}
+		.buttextcont a{
+			text-decoration: none;
+		}
+		.buttontext{
+			font-family: Trebuchet MS;
+			display: block;
+		}
+		.buttonround.walk{
+			background-image: url("Images/illusts new-08.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #FAAA58;
+		}
+		.walktext{
+			color: #FAAA58;
+		}
+		.buttonround.trike{
+			background-image: url("Images/illusts new-11.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #00B094;
+		}
+		.triketext{
+			color: #00B094;
+		}
+		.buttonround.jeep{
+			background-image: url("Images/icon-06.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #C6315A;
+		}
+		.jeeptext{
+			color: #C6315A;
+		}
+		.buttonround.fx{
+			background-image: url("Images/illusts new-14.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #854197;
+		}
+		.fxtext{
+			color: #854197;
+		}
+
+
+		.row2 .taxi{
+			background-image: url("Images/illusts new-23.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #C6315A;
+		}
+		.taxitext{
+			color: #C6315A;
+		}
+		.row2 .bus{
+			background-image: url("Images/illusts new-17.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #FAAA58;
+		}
+		.bustext{
+			color: #FAAA58;
+		}
+		.row2 .mlrt{
+			background-image: url("Images/illusts new-20.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #00B094;
+		}
+		.mlrttext{
+			color: #00B094;
+		}
+		.row2 .misc{
+			background-image: url("Images/illusts new-28.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #854197;
+		}
+		.misctext{
+			color: #854197;
+		}
+
+
+		.row3 .etiq{
+			background-image: url("Images/illusts new-30.png");
+			background-size: 80%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #046297;
+		}
+		.etiqtext{
+			color: #046297;
+		}
+
+
+		#introblurbcontainer{
+			background-color: #046297;
+			width: 100%;
+			margin: 0 auto;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.sectiontitle{
+			color: white;
+			font-family: Gotham Black;
+			font-size: 30px;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+		#introp{
+
+			width: 72%;
+			color: white;
+			font-family: Trebuchet MS;
+			text-align: center;
+			margin: 0 auto;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		#introp p{
+			font-family: helvetica;
+			font-weight: lighter;
+		}
+		#tagline{
+			font-size: 20px;
+			font-weight: bold;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+
+		#contactcontainer{
+			background-color: #00B094;
+			margin: 0 auto;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+
+
+		.introplink{
+			font-family: Gotham Black;
+			font-weight: bold;
+		}
+		.introplink:visited{
+			color: white;
+		}
+
+		#footercontainer{
+			color: white;
+			background-color: black;
+			text-align: center;
+			margin: 0 auto;
+			padding: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
+
+		/*MOBILE VERSION*/
+		@media screen, handheld and (max-width: 400px;){
+			.ButtonContainer{
+				width: 100%;
+			}
+			.buttonrow{
+				width: 100%;
+			}
+			.buttonround{
+				margin-bottom: 25px;
+			}
+		}	
+
+		/*HALF SCREEN VERSION*/
+		@media screen and (max-width: 700px){
+			#blurb{
+				font-size: 17px;
+			}
+			#nav{
+				width: 100%;
+				padding: 0 auto;
+			}
+			#nav span{
+				width: 100%;
+				padding: 0% 5%;
+			}
+			.buttonrow{
+				width: 100%;
+			}
+			.buttonround{
+				margin-bottom: 10px;
+			}
+
+			#introp{
+				width: 90%;
+			}
+			#introp a:visited{
+				color: white;
+			}
+		}
+	
+
+	</style>
+
+
+
+
+	<body>
+		<div id="header">
+			<div id="headertxt">
+				<p id="SiteName"><a id="titlelink" href="index.html">CommuNaviPH</a></p>
+
+				<div id="blurb">
+					<p>Don't know how to commute?</p>
+					<p>Start here and go pro!</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="container">
+			<div id="nav">
+				<span><a id="linkhome" href="index.html">HOME</a></span>
+				<span><a id="linkabout" href="about.html">ABOUT</a></span>
+				<span><a id="linkguides" href="guides.html">GUIDES</a></span>
+				<span><a id="linkcontact" href="contact.html">CONTACT</a></span>
+			</div>
+
+
+			<div id="ButtonContainer">
+			<div class="buttonrow">
+				<div class="buttextcont"><a href="guides-walking.html">
+					<div class="buttonround walk"></div>
+					<p class="buttontext walktext">Walking</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-trike.html">
+					<div class="buttonround trike"></div>
+					<p class="buttontext triketext">Tricycle</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-jeep.html">
+					<div class="buttonround jeep"></div>
+					<p class="buttontext jeeptext">Jeepney</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-fx.html">
+					<div class="buttonround fx"></div>
+					<p class="buttontext fxtext">FX</p>
+				</a></div>
+			</div>
+
+			<div class="buttonrow row2">
+				<div class="buttextcont"><a href="guides-taxi.html">
+					<div class="buttonround taxi"></div>
+					<p class="buttontext taxitext">Taxi</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-bus.html">
+					<div class="buttonround bus"></div>
+					<p class="buttontext bustext">Bus</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-mlrt.html">
+					<div class="buttonround mlrt"></div>
+					<p class="buttontext mlrttext">MRT/LRT</p>
+				</a></div>
+				<div class="buttextcont"><a href="guides-misc.html">
+					<div class="buttonround misc"></div>
+					<p class="buttontext misctext">Others</p>
+				</a></div>
+			</div>
+
+
+			<div class="buttonrow row3">
+				<div class="buttextcont"><a href="guides-etiq.html">
+					<div class="buttonround etiq"></div>
+					<p class="buttontext etiqtext">Commuting Etiquette</p>
+				</a></div>
+			</div>
+		</div>
+
+
+		<div id="introblurbcontainer">
+			<p class="sectiontitle">What is CommuNaviPH?</p>
+
+			<div id="introp">
+				<p>
+					CommuNaviPH is your one stop terminal for all your commuting knowledge needs! We feature helpful, illustrated, step-by-step guides for you to follow before you venture out into the Philippine commuting landscape. Each guide features quick tips and tricks to help you move like a veteran. Click on any of the guides above to get started!
+				</p>
+				<p id="tagline">
+					What are you waiting for? Go forth and commute!
+				</p>
+			</div>
+		</div>
+
+
+		<div id="contactcontainer">
+			<p class="sectiontitle">Check us out?</p>
+
+			<div id="introp">
+				<p>
+					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
+				</p>
+				<p>
+					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
+				</p>
+			</div>
+		</div>
+
+
+		<!--<div id="footercontainer">
+			<p class="sectiontitle">Footer here</p>
+		</div>!-->
+
+
+
+
+		<script>
+	 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	 		 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  		ga('create', 'UA-76183961-1', 'auto');
+	  		ga('send', 'pageview');
+		</script>
+	</body>
+</html>
