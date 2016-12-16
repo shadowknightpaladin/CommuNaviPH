@@ -28,9 +28,10 @@
 		}
 		a{
 			text-decoration: none;
+			color: #046297;
 		}
 		a:visited{
-			color: #C6315A;
+			color: #00B094;
 		}
 		#container{
 			width: 100%;
@@ -86,30 +87,35 @@
 			width: 100%;
 			padding: 0px 40px;
 		}
-		.navlinks{
-			color: #046297;
-			padding: 10px;
-			border-radius: 10px;
-		}
+		
 		.navlinks:hover{
-			text-decoration: underline;
-			transition: 0.5s 0.2s all;
-		}
-		#linkhome{
-			color: #C6315A;
-		}
-		#linkhome:hover{
 			background-color: #046297;
 			color: white;
 			text-decoration: underline;
+			padding: 5px 10px;
+			border-radius: 10px;
 			transition: 0.5s 0.2s all;
+		}
+		.linkhome:visited{
+			color: #C6315A;
+		}
+		.linkhome:hover{
+			background-color: #046297;
+			color: white;
+			text-decoration: underline;
+			padding: 5px 10px;
+			border-radius: 10px;
+			transition: 0.5s 0.2s all;
+		}
+		#titlelink{
+			color: white;
 		}
 		#titlelink:visited{
 			color: white;
 		}
 
 
-				#ButtonContainer{
+		#ButtonContainer{
 			margin: 0 auto;
 			margin-top: 45px;
 			padding: 0 auto;
@@ -377,10 +383,10 @@
 
 		<div id="container">
 			<div id="nav">
-				<span><a id="linkhome" href="index.html">HOME</a></span>
-				<span><a id="linkabout" href="about.html">ABOUT</a></span>
-				<span><a id="linkguides" href="guides.html">GUIDES</a></span>
-				<span><a id="linkcontact" href="contact.html">CONTACT</a></span>
+				<span><a class="navlinks linkhome" href="index.html">HOME</a></span>
+				<span><a class="navlinks linkabout" href="about.html">ABOUT</a></span>
+				<span><a class="navlinks linkguides" href="guides.html">GUIDES</a></span>
+				<span><a class="navlinks linkcontact" href="contact.html">CONTACT</a></span>
 			</div>
 
 
@@ -454,16 +460,9 @@
 				<p>
 					Check out our facebook page <a class="introplink" href="http://facebook.com/communaviph">-here!-</a>
 				</p>
-				<!--<p>
-					And please please please click on through to the survey <a class="introplink" href="http://goo.gl/forms/EhOoWIyQ72">-here-!</a> <br>It'll help this senior finally graduate!!!!
-				</p>!-->
 			</div>
 		</div>
 
-
-		<!--<div id="footercontainer">
-			<p class="sectiontitle">Footer here</p>
-		</div>!-->
 
 
 
